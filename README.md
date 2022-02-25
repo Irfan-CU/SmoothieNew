@@ -5,7 +5,7 @@
 ## Orderflow from web
  Customer QRScanning --> Customer Registration/Login --> Resturant Menu --> Customer Food Ordering --> Resturant Order Details --> Customer Payment
 
-## Orderflow from web
+## Orderflow from Phone App
  Customer QRScanning --> Resturant Menu --> Customer Food Ordering --> Resturant Order Details --> Resturant Order Fetching --> Customer Payment
 
 ## Customer Services
