@@ -31,8 +31,24 @@
         2- Whenever Customer Food Orderging service produces a food completion event this service will use that event.<!--https://www.confluent.io/learn/data-streaming/-->,<!-- https://stackoverflow.com/questions/42151544/when-to-use-rabbitmq-over-kafka -->
 
     # Resturant Menu 
-        1-This microservice should be for a resturant to upload the food menu.
-        2- Resturant Menu DB will store the information about the food menu.         
+        1- This microservice should be for a resturant to upload the food menu.
+        2- Resturant Menu DB will store the information about the food menu.   
+    
+    
+        <!-- The services below should be developed in Beta Version  -->
+    
+    # Resturant Total Orders Menu 
+        1- This microservice should be for resturants to check the orders of all day.
+        2- Consumer of the Customer Food Ordering service. Each order will be added to the ResturantOrdersDB
+        3- This Orders Service will allow to do ML that will be use to tell what foods are being ordered and this can help in       improving the inventory of a resturant.
+        4- Resturant Menu DB will store the information about the food menu.
+
+    #Resturant FoodOrders Analysis
+        1- This microservice should be for resturants to check the orders of all day.
+        2- Consumer of the Customer Food Ordering service. Each order will be added to the ResturantOrdersDB
+        3- This Orders Service will allow to do ML that will be use to tell what foods are being ordered and this can help in       improving the inventory of a resturant.
+        4- Resturant Menu DB will store the information about the food menu.
+              
 
 ## DataBase
     # Customer Registration DB 
