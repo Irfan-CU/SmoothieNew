@@ -1,0 +1,48 @@
+version: "3.8"
+services:
+
+  RestaurantProfileDB:
+    image: mongo
+    container_name: restaurant_profile_db
+    volumes:
+      - mongoDBvolume:/data/restaurantprofiledb
+    ports:
+      - 27017:27017
+
+
+  CustomerFoodOrderingDB:
+    image: mongo
+    container_name: customer_food_ordering_db
+    volumes:
+      - mongoDBvolume:/data/customerfoodorderingdb
+    ports:
+      - 27018:27017
+
+  RabbitMQ:
+    image: rabbitmq:3-management
+    container_name: rabbitMQ
+    ports:
+      - 5672:5672
+
+  customerfoodordering:
+    image: customer_food_ordering:1.0
+    container_name: customer_food_ordering
+    ports:
+      - 8082:8082
+
+  RestaurantProfile:
+    image: restaurant_profile:1.0
+    container_name: restaurant_profile
+    ports:
+      - 8084:8084
+
+  RestaurantOrderFetching:
+    image: resturantorderfetching:1.0
+    container_name: resturantorderfetching
+    ports:
+      - 8083:8083
+
+
+volumes:
+  mongoDBvolume:
+    driver: local

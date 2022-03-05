@@ -1,0 +1,42 @@
+CAP
+C:All clients see the same data
+A:All clients can find replica of data
+P:System continues to work as expected even in case of network failure.
+
+For restaurant database our priority is AP.
+https://medium.com/design-microservices-architecture-with-patterns/how-to-choose-a-database-for-microservices-cap-theorem-d1585bf40ecd
+https://medium.com/geekculture/managing-data-in-microservices-architecture-fb459bdbf71f
+https://steemit.com/utopian-io/@sirfreeman/building-a-food-order-system-with-mean-stack-mongoose-express-angular-and-nodejs
+https://www.researchgate.net/figure/Database-Schema-for-the-Restaurant-Ordering-System_fig4_323230406
+https://www.red-gate.com/simple-talk/databases/sql-server/performance-sql-server/designing-highly-scalable-database-architectures/
+https://levelup.gitconnected.com/how-to-design-a-system-to-scale-to-your-first-100-million-users-4450a2f9703d
+**** IMP-->https://dba.stackexchange.com/questions/185726/what-should-be-architecture-of-multi-client-web-application
+Restaurant Database (MongoDB Why?)
+We don't want strict consistency in any DB as a a single restaurant owner will update the menu and this will available to the user.
+Secondly in case of expansion we want to scale DB efficiently and NoSQl provide sharding to scale horizontal which is way easier then vertical scaling of SQL.
+Another reason is that for each restaurant and each food menu the schema can vary greatly so it is suitable to have a schemaless DB.
+E.g:
+
+Starbucks Coffee Ordering: https://www.starbucks.ca/menu
+    Starbucks Menu : Hot Breakfast, Hot Coffee, Hot Teas, Hot Drinks,
+    Flow from frontEnd to backEnd
+        User opens a restaurant page :(RestaurantName:Starbucks,Location)
+        User clicks on Hot-Coffee: (FoodItemName:Coffee)
+        User clicks on Caffe-Misto: (FoodItemNameSubCategory:Caffe-Misto)
+        User selects on Grande-Size: (FoodItemSize:Grande)
+        User selects from Customization list: (Customization.Flavor,Customization.Toppings)
+    Let's say Starbucks ask smoothies to setup a smoothie for Starbucks:
+        Send us the pics of the menu:
+        Using the pics of menu a DB will be designed and created for Starbucks.
+
+
+Domino's Pizza:
+    Pizza();
+    Wings();
+    Let's say Domino's ask smoothies to setup a smoothie for Domino's:
+            Send us the pics of the menu:
+            Using the pics of menu a DB will be designed and created for Domino's.
+
+
+
+

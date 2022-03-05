@@ -1,16 +1,10 @@
 package com.backend.CustomerFoodOrdering.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.*;
 
 
-@AllArgsConstructor
+@Data
 @NoArgsConstructor
-@Getter
-@Setter
 public class FoodOrderEntity {
 
     private String price;
@@ -18,15 +12,8 @@ public class FoodOrderEntity {
     private String foodItemCode;
     private String tableNumber;
     private String quantity;
+    private String size;
+    private String restaurantName;
 
 
-    @Override
-    public String toString() {
-        return "ItemEntity{" +
-                ", price='" + price + '\'' +
-                ", foodItemName='" + foodItemName + '\'' +
-                ", FoodItemCode='" + foodItemCode + '\'' +
-                ", tableNumber='" + tableNumber + '\'' +
-                '}';
-    }
 }
